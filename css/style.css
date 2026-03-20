@@ -175,7 +175,7 @@ body {
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   padding: 6rem 2rem 4rem;
