@@ -309,8 +309,8 @@
 
   // Focus globe on ISS when badge is clicked
   window.focusISSOnGlobe = function () {
-    // Scroll to hero
-    document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+    // Scroll to Space section
+    document.getElementById('space')?.scrollIntoView({ behavior: 'smooth' });
 
     // Rotate globe to show ISS position
     const targetRotationY = -(lastISSLng + 180) * (Math.PI / 180) + Math.PI;
