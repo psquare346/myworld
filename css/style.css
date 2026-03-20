@@ -180,7 +180,7 @@ body {
   align-items: center;
   padding: 6rem 2rem 4rem;
   z-index: 1;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-content {
