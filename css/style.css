@@ -226,7 +226,8 @@ body {
   color: var(--text-bright);
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  min-height: 4.5em;
+  height: 4.5em;
+  overflow: hidden;
 }
 
 .cursor {
@@ -311,9 +312,14 @@ body {
 
 /* Globe */
 .globe-container {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+  position: fixed;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-45%);
+  width: 45vw;
+  height: 80vh;
+  z-index: 0;
+  pointer-events: auto;
 }
 
 /* Fact Card */
