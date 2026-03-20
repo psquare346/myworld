@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pravin Patel — AI-Powered Builder & Portfolio</title>
+  <meta name="description" content="Explore Pravin Patel's portfolio of projects built with Claude and Gemini AI. From ML trading systems to full-stack web apps — bridging enterprise expertise with modern AI.">
+  <meta name="keywords" content="Pravin Patel, AI portfolio, Claude, Gemini, prompt engineering, SAP, trading bot, web development">
+  <meta name="author" content="Pravin Patel">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pravin Patel — AI-Powered Builder">
+  <meta property="og:description" content="Portfolio of projects built with Claude & Gemini AI.">
+  <meta property="og:url" content="https://psquare346.github.io/myworld/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Neural Network Canvas Background -->
+  <canvas id="neural-canvas"></canvas>
+
+  <!-- Meditation Background Overlay -->
+  <div class="meditation-bg"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <span class="brand-icon">⟠</span>
+        <span class="brand-text">PRAVIN<span class="accent">.world</span></span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        AI-Augmented Development
+      </div>
+      <h1 class="hero-title">
+        <span class="typing-line" id="typing-text"></span>
+        <span class="cursor">|</span>
+      </h1>
+      <p class="hero-subtitle">
+        Enterprise SAP analyst turned AI-powered full-stack builder. Leveraging
+        <span class="highlight">Claude</span> &amp; <span class="highlight">Gemini</span>
+        to ship real applications.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          <span class="btn-glow"></span>
+          Explore Projects
+        </a>
+        <a href="#about" class="btn btn-ghost">Learn More →</a>
+      </div>
+    </div>
+
+    <!-- Globe Container -->
+    <div class="globe-container" id="globe-container"></div>
+
+    <!-- Fun Fact Card -->
+    <div class="fact-card" id="fact-card">
+      <div class="fact-header">
+        <span class="fact-icon">⚡</span>
+        <span class="fact-label">Random Fact</span>
+      </div>
+      <p class="fact-text" id="fact-text">Loading...</p>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="section-container">
+      <div class="section-tag">&lt;about&gt;</div>
+      <h2 class="section-title glitch" data-text="About Me">About Me</h2>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead">
+            I'm <strong>Pravin Patel</strong> — a Senior SAP Functional Analyst with <strong>15+ years</strong>
+            in enterprise technology, now channeling that deep domain expertise into building real-world
+            applications powered by AI.
+          </p>
+          <p>
+            My career spans <strong>Blue Diamond Growers</strong>, <strong>EY / Corteva Agriscience</strong>,
+            <strong>Coca-Cola Refreshments</strong>, and <strong>Ortho Clinical Diagnostics</strong> — configuring
+            SAP IBP, PP, QM, MM, and leading S/4HANA transformations. I hold a <strong>B.S. in Biology</strong>
+            from Long Island University.
+          </p>
+          <p>
+            Today, I use <strong>Claude</strong> and <strong>Gemini</strong> as my development partners to
+            rapidly prototype and ship applications — from ML trading systems to full-stack web tools. Each
+            project below was built through prompt engineering and iterative collaboration with AI.
+          </p>
+          <p class="about-seeking">
+            <span class="tag">🎯 Seeking</span> Roles that bridge enterprise domain knowledge with modern
+            AI/development workflows — where understanding business processes <em>and</em> technology creates
+            outsized impact.
+          </p>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-value" data-count="15">0</div>
+            <div class="stat-label">Years in Enterprise Tech</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-count="8">0</div>
+            <div class="stat-label">AI-Built Projects</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-count="2">0</div>
+            <div class="stat-label">AI Partners (Claude & Gemini)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">∞</div>
+            <div class="stat-label">Curiosity & Drive</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-tools">
+        <span class="tool-tag">SAP IBP</span>
+        <span class="tool-tag">SAP S/4HANA</span>
+        <span class="tool-tag">Python</span>
+        <span class="tool-tag">JavaScript</span>
+        <span class="tool-tag">Three.js</span>
+        <span class="tool-tag">Next.js</span>
+        <span class="tool-tag">Machine Learning</span>
+        <span class="tool-tag">Claude AI</span>
+        <span class="tool-tag">Gemini AI</span>
+        <span class="tool-tag">Tauri</span>
+        <span class="tool-tag">Node.js</span>
+        <span class="tool-tag">Git/GitHub</span>
+      </div>
+
+      <div class="section-tag">&lt;/about&gt;</div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="projects" id="projects">
+    <div class="section-container">
+      <div class="section-tag">&lt;projects&gt;</div>
+      <h2 class="section-title glitch" data-text="My Projects">My Projects</h2>
+      <p class="section-subtitle">Each project was built through AI-powered pair programming with Claude or Gemini.</p>
+
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card" data-project="quantbot" id="project-card-1">
+          <div class="card-glow"></div>
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-icon">📈</span>
+              <span class="card-ai-badge claude">Claude</span>
+            </div>
+            <h3 class="card-title">QuantBot ML Trading System</h3>
+            <p class="card-desc">Full ML pipeline with CNN-based prediction, ATR risk management, portfolio optimization, and live execution against Alpaca Markets API.</p>
+            <div class="card-tech">
+              <span>Python</span><span>TensorFlow</span><span>Alpaca API</span><span>SQLite</span>
+            </div>
+            <button class="card-btn" onclick="openModal('quantbot')">View Details →</button>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" data-project="qrforge" id="project-card-2">
+          <div class="card-glow"></div>
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-icon">⚡</span>
+              <span class="card-ai-badge claude">Claude</span>
+            </div>
+            <h3 class="card-title">QRForge</h3>
+            <p class="card-desc">Free, open-source QR code generator supporting 8+ formats with custom styling, bulk generation, and SEO optimization. Hosted on GitHub Pages.</p>
+            <div class="card-tech">
+              <span>HTML/CSS/JS</span><span>QR Styling API</span><span>SEO</span>
+            </div>
+            <button class="card-btn" onclick="openModal('qrforge')">View Details →</button>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" data-project="bsgrocery" id="project-card-3">
+          <div class="card-glow"></div>
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-icon">🛒</span>
+              <span class="card-ai-badge claude">Claude</span>
+            </div>
+            <h3 class="card-title">B's Grocery Online Ordering</h3>
+            <p class="card-desc">Full-stack ordering system with Google Sheets backend, local print bridge for thermal receipts, and multi-store deployment.</p>
+            <div class="card-tech">
+              <span>Node.js</span><span>PDFKit</span><span>Google Apps Script</span>
+            </div>
+            <button class="card-btn" onclick="openModal('bsgrocery')">View Details →</button>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" data-project="htfscanner" id="project-card-4">
+          <div class="card-glow"></div>
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-icon">🔍</span>
+              <span class="card-ai-badge claude">Claude</span>
+            </div>
+            <h3 class="card-title">HTF Scanner</h3>
+            <p class="card-desc">Higher-timeframe stock scanner with multi-signal engine, Discord alerts integration, backtesting framework, and weekly reports.</p>
+            <div class="card-tech">
+              <span>Python</span><span>yfinance</span><span>Discord API</span>
+            </div>
+            <button class="card-btn" onclick="openModal('htfscanner')">View Details →</button>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card" data-project="sapbtp" id="project-card-5">
+          <div class="card-glow"></div>
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-icon">🏢</span>
+              <span class="card-ai-badge gemini">Gemini</span>
+            </div>
+            <h3 class="card-title">SAP BTP Application</h3>
+            <p class="card-desc">Next.js enterprise application with SAP BTP integration, middleware layer, and modern frontend for business workflows.</p>
+            <div class="card-tech">
+              <span>Next.js</span><span>TypeScript</span><span>SAP BTP</span>
+            </div>
+            <button class="card-btn" onclick="openModal('sapbtp')">View Details →</button>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card" data-project="optiflow" id="project-card-6">
+          <div class="card-glow"></div>
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-icon">⚙️</span>
+              <span class="card-ai-badge gemini">Gemini</span>
+            </div>
+            <h3 class="card-title">OptiFlow Optimizer</h3>
+            <p class="card-desc">Desktop supply chain optimization app built with Tauri + React. Features constraint modeling, time-series solving, and planned receipts.</p>
+            <div class="card-tech">
+              <span>Tauri</span><span>React</span><span>Rust</span><span>TypeScript</span>
+            </div>
+            <button class="card-btn" onclick="openModal('optiflow')">View Details →</button>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project-card" data-project="discordtrader" id="project-card-7">
+          <div class="card-glow"></div>
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-icon">🤖</span>
+              <span class="card-ai-badge claude">Claude</span>
+            </div>
+            <h3 class="card-title">Discord Signal Trader</h3>
+            <p class="card-desc">Real-time Discord-to-trade pipeline with ThinkorSwim integration, automated signal parsing, and execution management.</p>
+            <div class="card-tech">
+              <span>Python</span><span>Discord.py</span><span>ThinkorSwim</span>
+            </div>
+            <button class="card-btn" onclick="openModal('discordtrader')">View Details →</button>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="project-card" data-project="nqbacktest" id="project-card-8">
+          <div class="card-glow"></div>
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-icon">📊</span>
+              <span class="card-ai-badge claude">Claude</span>
+            </div>
+            <h3 class="card-title">NQ Futures Backtester</h3>
+            <p class="card-desc">Backtesting engine for NQ futures morning scalping strategies with parameter sweeps, regime analysis, and walk-forward validation.</p>
+            <div class="card-tech">
+              <span>Python</span><span>Pandas</span><span>Optuna</span>
+            </div>
+            <button class="card-btn" onclick="openModal('nqbacktest')">View Details →</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="section-tag">&lt;/projects&gt;</div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER / CONTACT ========== -->
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-icon">⟠</span> PRAVIN<span class="accent">.world</span>
+      </div>
+      <p class="footer-text">Built with AI. Powered by curiosity.</p>
+      <div class="footer-links">
+        <a href="https://github.com/psquare346" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/pravin-patel" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p class="footer-copy">© 2026 Pravin Patel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========== PROJECT MODAL ========== -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-header">
+        <span class="modal-icon" id="modal-icon"></span>
+        <span class="modal-badge" id="modal-badge"></span>
+      </div>
+      <h2 class="modal-title" id="modal-title"></h2>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-tech" id="modal-tech"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/globe.js"></script>
+  <script src="js/facts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
