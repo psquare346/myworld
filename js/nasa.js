@@ -43,6 +43,7 @@
 
     try {
       const res = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
 
       if (data.media_type === 'image') {
@@ -58,7 +59,10 @@
         descEl.textContent = desc.length > 300 ? desc.slice(0, 300) + '…' : desc;
       }
     } catch (err) {
-      if (wrapper) wrapper.innerHTML = '<p style="color: var(--text-dim); font-size: 0.85rem;">Unable to load APOD.</p>';
+      // Show fallback when rate-limited or unavailable
+      if (wrapper) wrapper.innerHTML = '<img class="apod-image" src="https://apod.nasa.gov/apod/image/2403/ngc1232_vlt_960.jpg" alt="NGC 1232 Galaxy" loading="lazy">';
+      if (titleEl) titleEl.textContent = 'NGC 1232 – A Grand Design Spiral Galaxy';
+      if (descEl) descEl.textContent = 'NASA APOD is temporarily rate-limited. Visit apod.nasa.gov for today\'s image.';
       console.warn('APOD API error', err);
     }
   }
