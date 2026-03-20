@@ -47,6 +47,7 @@
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#space">Space</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
     </div>
@@ -79,6 +80,13 @@
 
     <!-- Globe Container -->
     <div class="globe-container" id="globe-container"></div>
+
+    <!-- ISS Live Indicator -->
+    <div class="iss-badge" id="iss-badge">
+      <span class="pulse-dot"></span>
+      <span class="iss-label">ISS Live</span>
+      <span class="iss-coords" id="iss-coords">Tracking...</span>
+    </div>
 
     <!-- Fun Fact Card -->
     <div class="fact-card" id="fact-card">
@@ -310,6 +318,73 @@
     </div>
   </section>
 
+  <!-- ========== NASA LIVE SPACE ========== -->
+  <section class="space-section" id="space">
+    <div class="section-container">
+      <div class="section-tag">&lt;space&gt;</div>
+      <h2 class="section-title glitch" data-text="Live from Space">Live from Space</h2>
+      <p class="section-subtitle">Real-time data from NASA APIs — because curiosity extends beyond code.</p>
+
+      <div class="space-grid">
+        <!-- APOD Card -->
+        <div class="space-card apod-card" id="apod-card">
+          <div class="space-card-header">
+            <span class="space-card-icon">🔭</span>
+            <span class="space-card-label">NASA Astronomy Picture of the Day</span>
+          </div>
+          <div class="apod-image-wrapper" id="apod-image-wrapper">
+            <div class="apod-loading">Loading today's image...</div>
+          </div>
+          <h3 class="apod-title" id="apod-title"></h3>
+          <p class="apod-desc" id="apod-desc"></p>
+        </div>
+
+        <!-- ISS + Asteroids Column -->
+        <div class="space-sidebar">
+          <!-- ISS Tracker Card -->
+          <div class="space-card iss-card">
+            <div class="space-card-header">
+              <span class="space-card-icon">🛸</span>
+              <span class="space-card-label">ISS Live Position</span>
+            </div>
+            <div class="iss-data">
+              <div class="iss-stat">
+                <span class="iss-stat-label">Latitude</span>
+                <span class="iss-stat-value" id="iss-lat">—</span>
+              </div>
+              <div class="iss-stat">
+                <span class="iss-stat-label">Longitude</span>
+                <span class="iss-stat-value" id="iss-lng">—</span>
+              </div>
+              <div class="iss-stat">
+                <span class="iss-stat-label">Speed</span>
+                <span class="iss-stat-value">27,600 km/h</span>
+              </div>
+              <div class="iss-stat">
+                <span class="iss-stat-label">Altitude</span>
+                <span class="iss-stat-value">~408 km</span>
+              </div>
+            </div>
+            <p class="iss-note">Position updates every 10 seconds via open-notify.org</p>
+          </div>
+
+          <!-- Near Earth Asteroids Card -->
+          <div class="space-card asteroid-card">
+            <div class="space-card-header">
+              <span class="space-card-icon">☄️</span>
+              <span class="space-card-label">Near-Earth Asteroids Today</span>
+            </div>
+            <div class="asteroid-count" id="asteroid-count">—</div>
+            <div class="asteroid-subtitle">objects passing near Earth</div>
+            <div class="asteroid-detail" id="asteroid-detail"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-tag">&lt;/space&gt;</div>
+    </div>
+  </section>
+
   <!-- ========== FOOTER / CONTACT ========== -->
   <footer class="footer" id="contact">
     <div class="footer-inner">
@@ -318,6 +393,7 @@
       </div>
       <p class="footer-text">Built with AI. Powered by curiosity.</p>
       <div class="footer-links">
+        <a href="mailto:patelpravin83@gmail.com">📧 patelpravin83@gmail.com</a>
         <a href="https://github.com/psquare346" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/pravin-patel" target="_blank" rel="noopener">LinkedIn</a>
       </div>
@@ -343,6 +419,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="js/globe.js"></script>
   <script src="js/facts.js"></script>
+  <script src="js/nasa.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

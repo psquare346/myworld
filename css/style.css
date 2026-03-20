@@ -950,3 +950,273 @@ body {
     padding: 4rem 1rem;
   }
 }
+
+/* ---------- ISS Badge (Hero Overlay) ---------- */
+.iss-badge {
+  position: absolute;
+  top: 5.5rem;
+  right: 2rem;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 50px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--gold);
+  background: rgba(251, 191, 36, 0.08);
+  backdrop-filter: blur(10px);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.iss-badge .pulse-dot {
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
+}
+
+.iss-label { font-weight: 600; }
+
+.iss-coords {
+  color: rgba(251, 191, 36, 0.7);
+  font-size: 0.65rem;
+}
+
+/* ---------- Space Section ---------- */
+.space-section {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+.space-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+}
+
+.space-card {
+  padding: 1.5rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.3s;
+}
+
+.space-card:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.space-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.space-card-icon { font-size: 1.3rem; }
+
+.space-card-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cyan);
+}
+
+/* APOD */
+.apod-image-wrapper {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: var(--bg-deep);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apod-loading {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.apod-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+
+.apod-video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: var(--radius);
+}
+
+.apod-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 0.5rem;
+}
+
+.apod-desc {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* Space Sidebar */
+.space-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ISS Data */
+.iss-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.iss-stat {
+  text-align: center;
+  padding: 0.6rem;
+  background: rgba(0, 240, 255, 0.03);
+  border: 1px solid rgba(0, 240, 255, 0.08);
+  border-radius: 8px;
+}
+
+.iss-stat-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  margin-bottom: 0.2rem;
+}
+
+.iss-stat-value {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.iss-note {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* Asteroid */
+.asteroid-count {
+  font-family: var(--font-mono);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--cyan);
+  text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+  text-align: center;
+}
+
+.asteroid-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.asteroid-closest {
+  padding: 0.8rem;
+  background: rgba(0, 240, 255, 0.03);
+  border: 1px solid rgba(0, 240, 255, 0.08);
+  border-radius: 8px;
+}
+
+.asteroid-closest-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-bright);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.asteroid-stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.asteroid-mini-stat { text-align: center; }
+
+.asteroid-mini-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+.asteroid-mini-value {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.asteroid-hazard {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #ef4444;
+  padding: 0.3rem;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 4px;
+}
+
+.asteroid-safe {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--green);
+  padding: 0.3rem;
+  background: rgba(0, 255, 136, 0.05);
+  border-radius: 4px;
+}
+
+/* Responsive: Space */
+@media (max-width: 900px) {
+  .space-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .iss-badge {
+    top: auto;
+    bottom: 6rem;
+    right: 1rem;
+    left: auto;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+  }
+}

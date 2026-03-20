@@ -271,6 +271,39 @@
 
   animate();
 
+  // --- ISS Live Marker ---
+  const issGeo = new THREE.SphereGeometry(0.04, 12, 12);
+  const issMat = new THREE.MeshBasicMaterial({
+    color: 0xfbbf24,
+    transparent: true,
+    opacity: 1.0,
+  });
+  const issMarker = new THREE.Mesh(issGeo, issMat);
+  issMarker.visible = false;
+  globeGroup.add(issMarker);
+
+  // ISS glow ring
+  const issRingGeo = new THREE.RingGeometry(0.05, 0.08, 24);
+  const issRingMat = new THREE.MeshBasicMaterial({
+    color: 0xfbbf24,
+    transparent: true,
+    opacity: 0.5,
+    side: THREE.DoubleSide,
+  });
+  const issRing = new THREE.Mesh(issRingGeo, issRingMat);
+  issRing.visible = false;
+  globeGroup.add(issRing);
+
+  // Expose update function for nasa.js to call
+  window.updateISSPosition = function (lat, lng) {
+    const pos = latLngToVector3(lat, lng, radius + 0.03);
+    issMarker.position.copy(pos);
+    issMarker.visible = true;
+    issRing.position.copy(pos);
+    issRing.lookAt(0, 0, 0);
+    issRing.visible = true;
+  };
+
   // --- Resize ---
   window.addEventListener('resize', () => {
     camera.aspect = container.clientWidth / container.clientHeight;
