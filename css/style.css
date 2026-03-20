@@ -178,7 +178,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: end;
+  align-items: center;
   padding: 0 4% 4rem;
   z-index: 1;
   overflow: visible;
@@ -324,7 +324,7 @@ body {
 .globe-container {
   position: fixed;
   left: 50%;
-  top: 50%;
+  top: 55%;
   transform: translate(-50%, -50%);
   width: 55vw;
   height: 85vh;
