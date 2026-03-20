@@ -893,8 +893,8 @@ body {
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .hero {
-    flex-direction: column;
-    align-items: flex-start;
+    grid-template-columns: 1fr;
+    align-items: start;
     padding: 6rem 1.5rem 2rem;
     height: auto;
     min-height: 100vh;
@@ -913,13 +913,8 @@ body {
   .hero-actions { justify-content: flex-start; }
 
   .globe-container {
-    position: relative;
-    right: auto;
-    top: auto;
-    transform: none;
-    width: 100%;
-    height: 350px;
-    margin-top: 2rem;
+    width: 90vw;
+    height: 50vh;
   }
 
   .about-grid {
