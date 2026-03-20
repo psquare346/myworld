@@ -176,27 +176,26 @@ body {
 .hero {
   position: relative;
   height: 100vh;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
   padding: 0 4% 4rem;
   z-index: 1;
   overflow: visible;
 }
 
 .hero-left {
-  max-width: 380px;
+  max-width: 400px;
   z-index: 2;
   padding-bottom: 2rem;
-  margin-right: auto;
 }
 
 .hero-right {
-  max-width: 380px;
+  max-width: 400px;
   z-index: 2;
   text-align: right;
   padding-bottom: 2rem;
-  margin-left: auto;
+  justify-self: end;
 }
 
 .hero-badge {
