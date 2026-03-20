@@ -271,6 +271,105 @@
 
   animate();
 
+  // --- Satellite Constellation Visualization ---
+  const satelliteGroup = new THREE.Group();
+  globeGroup.add(satelliteGroup);
+
+  // Define satellite constellations with orbital parameters
+  const constellations = [
+    { name: 'Starlink', count: 25, altitude: 0.22, inclination: 53, color: 0xffffff, size: 0.008, speed: 1.0 },
+    { name: 'GPS', count: 6, altitude: 0.85, inclination: 55, color: 0xffaa00, size: 0.012, speed: 0.3 },
+    { name: 'Iridium', count: 6, altitude: 0.32, inclination: 86.4, color: 0x00ddff, size: 0.01, speed: 0.9 },
+    { name: 'OneWeb', count: 5, altitude: 0.48, inclination: 87.9, color: 0xaa88ff, size: 0.009, speed: 0.7 },
+    { name: 'Hubble', count: 1, altitude: 0.23, inclination: 28.5, color: 0xff6688, size: 0.018, speed: 0.95 },
+    { name: 'GOES', count: 2, altitude: 1.5, inclination: 0.1, color: 0xffdd44, size: 0.014, speed: 0.08 },
+    { name: 'Galileo', count: 4, altitude: 0.95, inclination: 56, color: 0x44ffaa, size: 0.011, speed: 0.25 },
+  ];
+
+  const satellites = [];
+  let totalSatCount = 0;
+
+  constellations.forEach(constellation => {
+    for (let i = 0; i < constellation.count; i++) {
+      const orbitRadius = radius + constellation.altitude * 0.4;
+      const phase = (i / constellation.count) * Math.PI * 2 + Math.random() * 0.5;
+      const incRad = (constellation.inclination * Math.PI) / 180;
+      const raanOffset = (i / constellation.count) * Math.PI * 2;
+
+      // Satellite dot
+      const satGeo = new THREE.SphereGeometry(constellation.size, 6, 6);
+      const satMat = new THREE.MeshBasicMaterial({
+        color: constellation.color,
+        transparent: true,
+        opacity: 0.8,
+      });
+      const satMesh = new THREE.Mesh(satGeo, satMat);
+      satelliteGroup.add(satMesh);
+
+      // Tiny trail (orbit arc)
+      if (constellation.size >= 0.01) {
+        const trailGeo = new THREE.RingGeometry(orbitRadius - 0.003, orbitRadius + 0.003, 64);
+        const trailMat = new THREE.MeshBasicMaterial({
+          color: constellation.color,
+          transparent: true,
+          opacity: 0.04,
+          side: THREE.DoubleSide,
+        });
+        const trailMesh = new THREE.Mesh(trailGeo, trailMat);
+        trailMesh.rotation.x = Math.PI / 2 - incRad;
+        trailMesh.rotation.z = raanOffset;
+        satelliteGroup.add(trailMesh);
+      }
+
+      satellites.push({
+        mesh: satMesh,
+        orbitRadius,
+        phase,
+        inclination: incRad,
+        raanOffset,
+        speed: constellation.speed * (0.8 + Math.random() * 0.4),
+        name: constellation.name,
+      });
+
+      totalSatCount++;
+    }
+  });
+
+  // Update satellite counter on page
+  const satCountEl = document.getElementById('sat-count');
+  if (satCountEl) satCountEl.textContent = totalSatCount.toLocaleString();
+
+  // Animate satellites in the main loop
+  const origAnimate = animate;
+  function animateSats() {
+    const time = Date.now() * 0.0005;
+    satellites.forEach(sat => {
+      const angle = time * sat.speed + sat.phase;
+      const x = sat.orbitRadius * Math.cos(angle);
+      const z = sat.orbitRadius * Math.sin(angle);
+      const y = z * Math.sin(sat.inclination);
+      const zAdjusted = z * Math.cos(sat.inclination);
+
+      // Apply RAAN rotation
+      const cosR = Math.cos(sat.raanOffset);
+      const sinR = Math.sin(sat.raanOffset);
+      sat.mesh.position.set(
+        x * cosR - zAdjusted * sinR,
+        y,
+        x * sinR + zAdjusted * cosR
+      );
+
+      // Twinkle effect
+      sat.mesh.material.opacity = 0.5 + 0.4 * Math.sin(time * 3 + sat.phase);
+    });
+
+    requestAnimationFrame(animateSats);
+  }
+  animateSats();
+
+  // Expose satellite count for other modules
+  window.satelliteCount = totalSatCount;
+
   // --- ISS Live Marker ---
   const issGeo = new THREE.SphereGeometry(0.04, 12, 12);
   const issMat = new THREE.MeshBasicMaterial({

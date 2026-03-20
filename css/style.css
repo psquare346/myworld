@@ -884,6 +884,25 @@ body {
   transform: translateY(0);
 }
 
+/* Satellite Constellation Tags */
+.sat-constellation-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.sat-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid;
+  border-radius: 20px;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.03);
+  letter-spacing: 0.05em;
+}
+
 /* ---------- Scrollbar ---------- */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-deep); }
