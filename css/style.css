@@ -312,11 +312,7 @@ body {
 /* Globe */
 .globe-container {
   position: absolute;
-  right: 5%;
-  top: 65%;
-  transform: translateY(-50%);
-  width: 50%;
-  height: 90%;
+  inset: 0;
   z-index: 1;
 }
 
