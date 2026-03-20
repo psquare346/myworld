@@ -188,6 +188,7 @@ body {
   max-width: 380px;
   z-index: 2;
   padding-bottom: 2rem;
+  margin-right: auto;
 }
 
 .hero-right {
@@ -195,6 +196,7 @@ body {
   z-index: 2;
   text-align: right;
   padding-bottom: 2rem;
+  margin-left: auto;
 }
 
 .hero-badge {
