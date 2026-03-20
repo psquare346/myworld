@@ -42,7 +42,7 @@
     if (!wrapper) return;
 
     try {
-      const res = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
+      const res = await fetch('https://api.nasa.gov/planetary/apod?api_key=VYeqOaZu8t26IwZb6vvz0NsoJ8pR4IuPXJiF5h98');
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
 
@@ -78,7 +78,7 @@
     try {
       const today = new Date().toISOString().split('T')[0];
       const res = await fetch(
-        `https://api.nasa.gov/neo/rest/v1/feed?start_date=${today}&end_date=${today}&api_key=DEMO_KEY`
+        `https://api.nasa.gov/neo/rest/v1/feed?start_date=${today}&end_date=${today}&api_key=VYeqOaZu8t26IwZb6vvz0NsoJ8pR4IuPXJiF5h98`
       );
       const data = await res.json();
       const count = data.element_count || 0;
