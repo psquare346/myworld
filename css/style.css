@@ -177,16 +177,24 @@ body {
   position: relative;
   height: 100vh;
   display: flex;
-  align-items: center;
-  padding: 6rem 2rem 4rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 4% 4rem;
   z-index: 1;
   overflow: visible;
 }
 
-.hero-content {
-  max-width: 600px;
+.hero-left {
+  max-width: 380px;
   z-index: 2;
-  margin-left: 5%;
+  padding-bottom: 2rem;
+}
+
+.hero-right {
+  max-width: 380px;
+  z-index: 2;
+  text-align: right;
+  padding-bottom: 2rem;
 }
 
 .hero-badge {
@@ -308,16 +316,17 @@ body {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 /* Globe */
 .globe-container {
   position: fixed;
-  right: 5%;
+  left: 50%;
   top: 50%;
-  transform: translateY(-45%);
-  width: 45vw;
-  height: 80vh;
+  transform: translate(-50%, -50%);
+  width: 55vw;
+  height: 85vh;
   z-index: 0;
   pointer-events: auto;
 }
@@ -884,16 +893,23 @@ body {
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
-    padding: 7rem 1.5rem 2rem;
-    text-align: center;
+    align-items: flex-start;
+    padding: 6rem 1.5rem 2rem;
+    height: auto;
+    min-height: 100vh;
   }
 
-  .hero-content {
-    margin-left: 0;
+  .hero-left,
+  .hero-right {
     max-width: 100%;
+    text-align: left;
   }
 
-  .hero-actions { justify-content: center; }
+  .hero-right {
+    padding-bottom: 0;
+  }
+
+  .hero-actions { justify-content: flex-start; }
 
   .globe-container {
     position: relative;

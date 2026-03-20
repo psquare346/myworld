@@ -55,8 +55,11 @@
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
-    <div class="hero-content">
-      <!-- Fun Fact Card (top-left) -->
+    <!-- Globe Container (behind everything) -->
+    <div class="globe-container" id="globe-container"></div>
+
+    <!-- Left Column: Fact + Title -->
+    <div class="hero-left">
       <div class="fact-card" id="fact-card">
         <div class="fact-header">
           <span class="fact-icon">⚡</span>
@@ -73,6 +76,10 @@
         <span class="typing-line" id="typing-text"></span>
         <span class="cursor">|</span>
       </h1>
+    </div>
+
+    <!-- Right Column: Subtitle + Buttons -->
+    <div class="hero-right">
       <p class="hero-subtitle">
         Enterprise SAP analyst turned AI-powered full-stack builder. Leveraging
         <span class="highlight">Claude</span> &amp; <span class="highlight">Gemini</span>
@@ -86,9 +93,6 @@
         <a href="#about" class="btn btn-ghost">Learn More →</a>
       </div>
     </div>
-
-    <!-- Globe Container -->
-    <div class="globe-container" id="globe-container"></div>
 
     <!-- ISS Live Indicator (clickable) -->
     <div class="iss-badge" id="iss-badge" onclick="focusISSOnGlobe()" style="cursor: pointer;" title="Click to focus on ISS position">
