@@ -274,7 +274,7 @@
   // --- ISS Live Marker ---
   const issGeo = new THREE.SphereGeometry(0.04, 12, 12);
   const issMat = new THREE.MeshBasicMaterial({
-    color: 0xfbbf24,
+    color: 0x00ff88,
     transparent: true,
     opacity: 1.0,
   });
@@ -285,7 +285,7 @@
   // ISS glow ring
   const issRingGeo = new THREE.RingGeometry(0.05, 0.08, 24);
   const issRingMat = new THREE.MeshBasicMaterial({
-    color: 0xfbbf24,
+    color: 0x00ff88,
     transparent: true,
     opacity: 0.5,
     side: THREE.DoubleSide,
@@ -295,13 +295,59 @@
   globeGroup.add(issRing);
 
   // Expose update function for nasa.js to call
+  let lastISSLat = 0, lastISSLng = 0;
   window.updateISSPosition = function (lat, lng) {
+    lastISSLat = lat;
+    lastISSLng = lng;
     const pos = latLngToVector3(lat, lng, radius + 0.03);
     issMarker.position.copy(pos);
     issMarker.visible = true;
     issRing.position.copy(pos);
     issRing.lookAt(0, 0, 0);
     issRing.visible = true;
+  };
+
+  // Focus globe on ISS when badge is clicked
+  window.focusISSOnGlobe = function () {
+    // Scroll to hero
+    document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+
+    // Rotate globe to show ISS position
+    const targetRotationY = -(lastISSLng + 180) * (Math.PI / 180) + Math.PI;
+    const targetRotationX = lastISSLat * (Math.PI / 180) * 0.3;
+
+    // Animate rotation
+    const startY = globeGroup.rotation.y;
+    const startX = globeGroup.rotation.x;
+    const duration = 1200;
+    const startTime = Date.now();
+
+    function animateFocus() {
+      const elapsed = Date.now() - startTime;
+      const t = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const ease = 1 - Math.pow(1 - t, 3);
+
+      globeGroup.rotation.y = startY + (targetRotationY - startY) * ease;
+      globeGroup.rotation.x = startX + (targetRotationX - startX) * ease;
+
+      if (t < 1) requestAnimationFrame(animateFocus);
+    }
+
+    animateFocus();
+
+    // Flash the ISS marker
+    let flashes = 0;
+    const flashInterval = setInterval(() => {
+      issMarker.visible = !issMarker.visible;
+      issRing.visible = !issRing.visible;
+      flashes++;
+      if (flashes >= 8) {
+        clearInterval(flashInterval);
+        issMarker.visible = true;
+        issRing.visible = true;
+      }
+    }, 150);
   };
 
   // --- Resize ---

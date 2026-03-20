@@ -312,30 +312,28 @@ body {
 /* Globe */
 .globe-container {
   position: absolute;
-  right: 0;
+  right: -5%;
   top: 50%;
   transform: translateY(-50%);
-  width: 55%;
-  height: 90%;
+  width: 60%;
+  height: 100%;
   z-index: 1;
 }
 
 /* Fact Card */
 .fact-card {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   z-index: 10;
-  max-width: 500px;
-  width: 90%;
-  padding: 1rem 1.5rem;
+  max-width: 420px;
+  width: 100%;
+  padding: 0.8rem 1.2rem;
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius);
   opacity: 0;
   transition: opacity 0.6s ease;
+  margin-bottom: 1.2rem;
 }
 
 .fact-card.visible { opacity: 1; }
@@ -973,8 +971,8 @@ body {
 }
 
 .iss-badge .pulse-dot {
-  background: var(--gold);
-  box-shadow: 0 0 8px var(--gold);
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
 }
 
 .iss-label { font-weight: 600; }

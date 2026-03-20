@@ -56,6 +56,15 @@
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
     <div class="hero-content">
+      <!-- Fun Fact Card (top-left) -->
+      <div class="fact-card" id="fact-card">
+        <div class="fact-header">
+          <span class="fact-icon">⚡</span>
+          <span class="fact-label">Random Fact</span>
+        </div>
+        <p class="fact-text" id="fact-text">Loading...</p>
+      </div>
+
       <div class="hero-badge">
         <span class="pulse-dot"></span>
         AI-Augmented Development
@@ -81,20 +90,11 @@
     <!-- Globe Container -->
     <div class="globe-container" id="globe-container"></div>
 
-    <!-- ISS Live Indicator -->
-    <div class="iss-badge" id="iss-badge">
+    <!-- ISS Live Indicator (clickable) -->
+    <div class="iss-badge" id="iss-badge" onclick="focusISSOnGlobe()" style="cursor: pointer;" title="Click to focus on ISS position">
       <span class="pulse-dot"></span>
-      <span class="iss-label">ISS Live</span>
+      <span class="iss-label">🛰️ ISS Live</span>
       <span class="iss-coords" id="iss-coords">Tracking...</span>
-    </div>
-
-    <!-- Fun Fact Card -->
-    <div class="fact-card" id="fact-card">
-      <div class="fact-header">
-        <span class="fact-icon">⚡</span>
-        <span class="fact-label">Random Fact</span>
-      </div>
-      <p class="fact-text" id="fact-text">Loading...</p>
     </div>
   </section>
 
