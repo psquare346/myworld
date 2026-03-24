@@ -47,7 +47,9 @@
       const data = await res.json();
 
       if (data.media_type === 'image') {
-        wrapper.innerHTML = `<img class="apod-image" src="${data.url}" alt="${data.title}" loading="lazy">`;
+        // Use hdurl as fallback if url points to apod.nasa.gov
+        const imgUrl = data.url && !data.url.includes('apod.nasa.gov') ? data.url : (data.hdurl || data.url);
+        wrapper.innerHTML = `<img class="apod-image" src="${imgUrl}" alt="${data.title}" loading="lazy" onerror="this.onerror=null;this.src='https://images-assets.nasa.gov/image/PIA18033/PIA18033~thumb.jpg'">`;
       } else if (data.media_type === 'video') {
         wrapper.innerHTML = `<iframe class="apod-video" src="${data.url}" frameborder="0" allowfullscreen></iframe>`;
       }
@@ -60,9 +62,9 @@
       }
     } catch (err) {
       // Show fallback when rate-limited or unavailable
-      if (wrapper) wrapper.innerHTML = '<img class="apod-image" src="https://apod.nasa.gov/apod/image/2403/ngc1232_vlt_960.jpg" alt="NGC 1232 Galaxy" loading="lazy">';
-      if (titleEl) titleEl.textContent = 'NGC 1232 – A Grand Design Spiral Galaxy';
-      if (descEl) descEl.textContent = 'NASA APOD is temporarily rate-limited. Visit apod.nasa.gov for today\'s image.';
+      if (wrapper) wrapper.innerHTML = '<img class="apod-image" src="https://images-assets.nasa.gov/image/PIA18033/PIA18033~medium.jpg" alt="The Milky Way" loading="lazy">';
+      if (titleEl) titleEl.textContent = 'The Milky Way Over Yellowstone';
+      if (descEl) descEl.textContent = 'NASA APOD is temporarily unavailable. Check back soon for today\'s astronomy picture.';
       console.warn('APOD API error', err);
     }
   }
