@@ -48,7 +48,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#space">Space</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
+        <li><a href="#start-project" class="nav-cta">Start a Project</a></li>
       </ul>
     </div>
   </nav>
@@ -408,6 +408,186 @@
     </div>
   </section>
 
+  <!-- ========== START A PROJECT ========== -->
+  <section class="intake-section" id="start-project">
+    <div class="section-container">
+      <div class="section-tag">&lt;start_project&gt;</div>
+      <h2 class="section-title glitch" data-text="Start a Project">Start a Project</h2>
+      <p class="section-subtitle">Tell us about your challenge. We'll design a custom solution — no templates, no cookie-cutter.</p>
+
+      <!-- Progress Bar -->
+      <div class="intake-progress">
+        <div class="progress-track">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="progress-dots">
+          <div class="progress-dot active" data-step="0">
+            <span class="dot-number">1</span>
+            <span class="dot-label">About You</span>
+          </div>
+          <div class="progress-dot" data-step="1">
+            <span class="dot-number">2</span>
+            <span class="dot-label">Challenge</span>
+          </div>
+          <div class="progress-dot" data-step="2">
+            <span class="dot-number">3</span>
+            <span class="dot-label">Vision</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form id="intake-form" class="intake-form" autocomplete="off">
+
+        <!-- Step 1: About You -->
+        <div class="form-step active" data-step="0">
+          <h3 class="step-title">👤 About You</h3>
+          <p class="step-desc">Let's start with the basics so we know who we're working with.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="client_name">Your Name <span class="required">*</span></label>
+              <input type="text" id="client_name" name="client_name" placeholder="Jane Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="client_email">Email <span class="required">*</span></label>
+              <input type="email" id="client_email" name="client_email" placeholder="jane@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="client_business">Business / Company</label>
+              <input type="text" id="client_business" name="client_business" placeholder="Acme Consulting LLC">
+            </div>
+            <div class="form-group">
+              <label for="client_industry">Industry</label>
+              <select id="client_industry" name="client_industry">
+                <option value="">Select your industry...</option>
+                <option value="Technology">Technology / SaaS</option>
+                <option value="Finance">Finance / Trading</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Retail">Retail / E-commerce</option>
+                <option value="Consulting">Consulting / Professional Services</option>
+                <option value="Manufacturing">Manufacturing / Supply Chain</option>
+                <option value="Education">Education / Training</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Food & Beverage">Food & Beverage</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: The Challenge -->
+        <div class="form-step" data-step="1">
+          <h3 class="step-title">🎯 Your Challenge</h3>
+          <p class="step-desc">What's the core problem you need solved? The more detail, the better our solution.</p>
+
+          <div class="form-group">
+            <label for="pain_point">What's your biggest pain point right now? <span class="required">*</span></label>
+            <textarea id="pain_point" name="pain_point" rows="4" placeholder="Example: I'm spending 10 hours a week manually tracking orders in spreadsheets and emailing invoices. I need a system that automates this..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="current_tools">What tools or systems are you currently using?</label>
+            <input type="text" id="current_tools" name="current_tools" placeholder="Excel, Google Sheets, Quickbooks, pen & paper...">
+          </div>
+
+          <div class="form-group">
+            <label for="tried_before">Have you tried any solutions before? What didn't work?</label>
+            <textarea id="tried_before" name="tried_before" rows="3" placeholder="We tried Shopify but it didn't integrate with our printer. We also looked at Wix but it felt too generic..."></textarea>
+          </div>
+        </div>
+
+        <!-- Step 3: Project Vision -->
+        <div class="form-step" data-step="2">
+          <h3 class="step-title">🚀 Project Vision</h3>
+          <p class="step-desc">Help us understand the scope so we can propose the right solution.</p>
+
+          <div class="form-group">
+            <label>What type of solution do you need? <span class="required">*</span></label>
+            <div class="checkbox-grid">
+              <label class="checkbox-card">
+                <input type="checkbox" name="service_type" value="Website / Web App">
+                <span class="checkbox-label">🌐 Website / Web App</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="service_type" value="Automation / Workflow">
+                <span class="checkbox-label">⚡ Automation / Workflow</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="service_type" value="Custom Software">
+                <span class="checkbox-label">💻 Custom Software</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="service_type" value="AI / Machine Learning">
+                <span class="checkbox-label">🧠 AI / Machine Learning</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="service_type" value="Data Pipeline / Analytics">
+                <span class="checkbox-label">📊 Data Pipeline / Analytics</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="service_type" value="Not Sure Yet">
+                <span class="checkbox-label">🤔 Not Sure Yet</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="budget">Budget Range</label>
+              <select id="budget" name="budget">
+                <option value="">Select range...</option>
+                <option value="Under $500">Under $500</option>
+                <option value="$500 - $1,500">$500 – $1,500</option>
+                <option value="$1,500 - $5,000">$1,500 – $5,000</option>
+                <option value="$5,000+">$5,000+</option>
+                <option value="Let's discuss">Let's discuss</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="timeline">Timeline</label>
+              <select id="timeline" name="timeline">
+                <option value="">Select timeline...</option>
+                <option value="ASAP">ASAP (1-2 weeks)</option>
+                <option value="1 month">Within a month</option>
+                <option value="2-3 months">2-3 months</option>
+                <option value="Flexible">Flexible / No rush</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="extra_details">Anything else we should know?</label>
+            <textarea id="extra_details" name="extra_details" rows="3" placeholder="Links to examples you like, specific features you need, preferred tech stack, etc."></textarea>
+          </div>
+        </div>
+
+        <!-- Form Navigation -->
+        <div class="form-nav">
+          <button type="button" id="intake-prev" class="btn btn-ghost" style="display:none;">← Back</button>
+          <button type="button" id="intake-next" class="btn btn-primary">Next →</button>
+          <button type="submit" id="intake-submit" class="btn btn-primary" style="display:none;">
+            <span class="btn-glow"></span>
+            Send Inquiry ✉️
+          </button>
+        </div>
+      </form>
+
+      <!-- Success State -->
+      <div id="intake-success" class="intake-success" style="display:none;">
+        <div class="success-icon">✅</div>
+        <h3 class="success-title">Inquiry Sent Successfully!</h3>
+        <p class="success-text">Thank you! We've received your project details and will get back to you within 24 hours with a proposed solution.</p>
+        <p class="success-fallback">Questions? Reach out directly at <a href="mailto:psquare346@gmail.com">psquare346@gmail.com</a></p>
+      </div>
+
+      <div class="section-tag">&lt;/start_project&gt;</div>
+    </div>
+  </section>
+
   <!-- ========== FOOTER / CONTACT ========== -->
   <footer class="footer" id="contact">
     <div class="footer-inner">
@@ -443,6 +623,7 @@
   <script src="js/globe.js"></script>
   <script src="js/facts.js"></script>
   <script src="js/nasa.js"></script>
+  <script src="js/intake.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

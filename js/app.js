@@ -168,7 +168,7 @@
 // ---- Scroll Animations (Intersection Observer) ----
 (function () {
   const elements = document.querySelectorAll(
-    '.project-card, .stat-card, .about-text, .about-tools, .about-seeking, .space-card'
+    '.project-card, .stat-card, .about-text, .about-tools, .about-seeking, .space-card, .intake-form, .intake-progress'
   );
 
   elements.forEach((el) => el.classList.add('fade-in'));
